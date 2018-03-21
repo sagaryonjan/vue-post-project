@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UNOapp Dev. Test - 'V2'</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="I wanna be the very best, like no one ever was.">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div id="app">
+	<section id="stage_outer">
+		<div id="stage_inner">
+
+			<nav-menu :term-types="term_types"></nav-menu>
+
+			<div class="mc">
+
+				<div class="mc-body section-inner">
+					<div class="mc-node cf">
+						<div class="header">
+							<h2 class="title title-node">Stats</h2>
+							<p class="desc">
+								Included below is a quick overview of all the data loaded by
+								this application, including the total number of items, as well as the number of each type of item.
+							</p>
+						</div>
+						<ul id="stats_wrap" class="body cf">
+							<li v-for="term_type in term_types" class="stats-item">
+								<h4>{{ term_type.term_type == 'all'?'TOTAL ITEMS':term_type.term_type }}
+									<span> [{{ term_type.number }}]</span>
+								</h4>
+								<div class="stats-bar"
+									 :class="'accent-'+term_type.term_type"
+									 :style="{ width: term_type.number*10 + '%'}">
+									<div class="stats-bar-inner"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<post-content :post-datas="post_datas"></post-content>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</div>
+<script src="dist/app.min.js"></script>
+</body>
+</html>

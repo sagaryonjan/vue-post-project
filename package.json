@@ -1,0 +1,28 @@
+{
+  "name": "unopp",
+  "description": "A small Unoapp in vue js",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "author": "sagaryonjan",
+  "private": false,
+  "scripts": {
+    "dev": "webpack",
+    "watch": "npm run dev -- --watch"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue"
+  ],
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "vue": "^2.5.7",
+    "vue-hot-reload-loader": "^0.1.3",
+    "vue-loader": "^11.3.4",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue-template-compiler": "^2.5.16"
+  }
+}
